@@ -1,0 +1,86 @@
+/*Tablet*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .nav-options {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-options a {
+        padding: 8px 10px;
+        font-size: 16px;
+    }
+
+    .products {
+        padding: 10px;
+    }
+
+    .product-item {
+        width: 100%;
+        max-width: 300px; 
+    }
+
+    .product-item h5 {
+        font-size: 1.1em; 
+    }
+
+    .product-item h6 {
+        font-size: 0.8em; 
+    }
+
+    .price-container p {
+        font-size: 1em; 
+    }
+
+    .search-btn {
+        width: 100%; 
+    }
+}
+
+/*Celular*/
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .search-bar {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .search-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .nav-options a {
+        font-size: 14px; 
+    }
+
+    .product-item h5 {
+        font-size: 1em; 
+    }
+
+    .product-item h6 {
+        font-size: 0.75em; 
+    }
+
+    .price-container p {
+        font-size: 0.9em; 
+    }
+}
