@@ -15,6 +15,7 @@
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
+        gap: 5px;
     }
 
     .nav-options a {
@@ -52,6 +53,8 @@
 @media (max-width: 480px) {
     .navbar {
         padding: 5px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .logo {
@@ -61,15 +64,38 @@
     .search-bar {
         padding: 8px;
         font-size: 14px;
+        width: 100%;
     }
 
     .search-btn {
         padding: 8px;
         font-size: 14px;
+        width: 100%;
+    }
+
+    .nav-options {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 5px;
     }
 
     .nav-options a {
-        font-size: 14px; 
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .products {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .product-item {
+        width: 100%;
+        max-width: 280px;
     }
 
     .product-item h5 {
