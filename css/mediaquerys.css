@@ -1,112 +1,63 @@
-/*Tablet*/
+/* Carrusel en pantallas pequeñas */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
+    .carousel img {
+        height: 200px;
+        object-fit: cover;
     }
 
-    .search-bar {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .card-body h5 {
+        font-size: 1rem;
+    }
+
+    .navbar .input-group {
         width: 100%;
-        margin: 10px 0;
-    }
-
-    .nav-options {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        gap: 5px;
-    }
-
-    .nav-options a {
-        padding: 8px 10px;
-        font-size: 16px;
-    }
-
-    .products {
-        padding: 10px;
-    }
-
-    .product-item {
-        width: 100%;
-        max-width: 300px; 
-    }
-
-    .product-item h5 {
-        font-size: 1.1em; 
-    }
-
-    .product-item h6 {
-        font-size: 0.8em; 
-    }
-
-    .price-container p {
-        font-size: 1em; 
-    }
-
-    .search-btn {
-        width: 100%; 
+        margin-top: 10px;
     }
 }
 
-/*Celular*/
-@media (max-width: 480px) {
-    .navbar {
-        padding: 5px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo {
-        width: 100px;
-    }
-
-    .search-bar {
-        padding: 8px;
-        font-size: 14px;
-        width: 100%;
-    }
-
-    .search-btn {
-        padding: 8px;
-        font-size: 14px;
-        width: 100%;
-    }
-
-    .nav-options {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        gap: 5px;
-    }
-
-    .nav-options a {
-        font-size: 14px;
-        padding: 8px 10px;
-    }
-
-    .products {
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
-    }
-
+/* Productos y categorías en pantallas más pequeñas */
+@media (max-width: 992px) {
     .product-item {
         width: 100%;
-        max-width: 280px;
+    }
+
+    .card {
+        margin: 10px auto;
+        width: 95%;
+    }
+
+    .product-item img {
+        height: 150px;
     }
 
     .product-item h5 {
-        font-size: 1em; 
+        font-size: 1rem;
     }
 
-    .product-item h6 {
-        font-size: 0.75em; 
+    .btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* Muy pequeñas pantallas (max-width: 576px) */
+@media (max-width: 576px) {
+    .navbar-brand .logo {
+        height: 30px;
     }
 
-    .price-container p {
-        font-size: 0.9em; 
+    .card img {
+        height: 120px;
+    }
+
+    .product-item h5, .product-item h6 {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
     }
 }
