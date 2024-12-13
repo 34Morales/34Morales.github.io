@@ -1,33 +1,26 @@
 <?php
 $products = [
     "computadoras" => [
-        ["id" => 1, "name" => "Laptop HP", "price" => "$15,000"],
-        ["id" => 2, "name" => "MacBook Air", "price" => "$25,000"]
+        ["id" => 1, "name" => "Laptop HP Pavilion 15", "price" => "$15,000"],
+        ["id" => 2, "name" => "MacBook Air M2", "price" => "$25,000"],
+        ["id" => 3, "name" => "Dell XPS 13", "price" => "$20,000"],
+        ["id" => 4, "name" => "Lenovo ThinkPad X1", "price" => "$18,500"]
     ],
     "accesorios" => [
-        ["id" => 3, "name" => "Mouse Logitech", "price" => "$500"],
-        ["id" => 4, "name" => "Teclado Mecánico", "price" => "$1,200"]
+        ["id" => 5, "name" => "Mouse Logitech MX Master 3", "price" => "$1,200"],
+        ["id" => 6, "name" => "Teclado Mecánico Razer", "price" => "$2,500"],
+        ["id" => 7, "name" => "Audífonos Sony WH-1000XM4", "price" => "$6,000"],
+        ["id" => 8, "name" => "Cargador Rápido Anker 45W", "price" => "$800"]
     ],
-    "monitores" => [
-        ["id" => 5, "name" => "Monitor Dell 24\"", "price" => "$4,000"],
-        ["id" => 6, "name" => "Monitor Samsung 27\"", "price" => "$6,000"]
-    ],
+   
     "smartphones" => [
-        ["id" => 7, "name" => "iPhone 14", "price" => "$28,000"],
-        ["id" => 8, "name" => "Samsung Galaxy S24", "price" => "$20,000"]
-    ],
+        ["id" => 13, "name" => "iPhone 14 Pro", "price" => "$30,000"],
+        ["id" => 14, "name" => "Samsung Galaxy S24 Ultra", "price" => "$28,000"],
+        ["id" => 15, "name" => "Xiaomi Mi 13", "price" => "$15,000"],
+        ["id" => 16, "name" => "Google Pixel 7 Pro", "price" => "$22,000"]
+    ]
 ];
-
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $category = $_GET['category'];
-    if (isset($products[$category])) {
-        echo json_encode($products[$category]);
-    } else {
-        echo json_encode(["error" => "Categoría no encontrada"]);
-    }
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,8 +28,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorías</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="./js/script.js"></script>
+    
+    <style>
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <header class="bg-primary text-white py-3">
@@ -46,9 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         </div>
     </header>
 
-    <main class="container mt-4">
-        <h2 class="mb-4">Categorías</h2>
-        <div class="row text-center">
+    <main class="container my-4">
+        <h2 class="mb-4 text-center">Categorías</h2>
+        <div class="row text-center mb-4">
             <div class="col-md-3">
                 <button class="btn btn-outline-primary category-btn w-100" data-category="computadoras">Computadoras</button>
             </div>
@@ -63,15 +75,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             </div>
         </div>
 
-        <section id="products-container" class="mt-5">
-            <h3 class="text-center">Selecciona una categoría para ver productos</h3>
-            <div id="products-grid" class="row g-3"></div>
-        </section>
+        <!-- Lista de productos -->
+        <div class="row g-4">
+            <?php foreach ($products as $category => $items): ?>
+                <?php foreach ($items as $item): ?>
+                    <div class="col-md-3">
+                        <div class="product-item">
+                            <img src="./img/product-placeholder.png" alt="<?= $item['name'] ?>">
+                            <h5><?= $item['name'] ?></h5>
+                            <div class="price-container">
+                                <p class="text-primary fw-bold"><?= $item['price'] ?></p>
+                                <button class="btn btn-outline-primary">
+                                    <i class="fa-solid fa-cart-shopping"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     </main>
-     <!-- Footer -->
-     <footer class="bg-primary text-white text-center py-3">
+
+    <footer class="bg-primary text-white text-center py-3">
         © 2024 Disa. Todos los derechos reservados.
     </footer>
-
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
